@@ -17,7 +17,7 @@ const Card = () => {
       .then((res) => res.json())
       .then((data) => setSingleData(data.data));
   }, [uniqueID]);
-  console.log(singleData);
+  // console.log(singleData);
 
   useEffect(() => {
     const loadData = async () => {
@@ -32,7 +32,7 @@ const Card = () => {
 
   return (
     <>
-      <div className=" lg:px-11 gap-3 mt-4 grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3">
+      <div className="lg:px-11 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {data.slice(0, showAll ? 12 : 6).map((singleData) => (
           <SingleData
             key={singleData.id}
@@ -46,7 +46,7 @@ const Card = () => {
           <Button>See More</Button>
         </span>
       )}
-      <Modal></Modal>
+      <Modal singleData={singleData}></Modal>
     </>
   );
 };

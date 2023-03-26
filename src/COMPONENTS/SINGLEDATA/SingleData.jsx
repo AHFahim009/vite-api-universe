@@ -8,7 +8,7 @@ const SingleData = (props) => {
   //   };
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 ">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
