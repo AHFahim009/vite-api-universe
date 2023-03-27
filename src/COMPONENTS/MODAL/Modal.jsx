@@ -10,18 +10,18 @@ const Modal = (props) => {
       <div className="modal">
         <div className="modal-box w-11/12 max-w-5xl">
           <div className="card lg:card-side bg-base-100 ss">
-            <div className="card-body  w-full h-full border-2 border-error mr-2">
+            <div className="card-body w-full h-full border-2 border-error mr-2">
               <h2 className="card-title">
                 {description ? description : "NO Data Found"}
               </h2>
-              <div className="flex my-3  ">
-                <div>
+              <div className="flex flex-col sm:flex-row my-3">
+                <div className="sm:w-1/2">
                   <h1 className="text-2xl">Features</h1>
                   {Object.values(features || {}).map((value) => (
                     <p>{value.feature_name}</p>
                   ))}
                 </div>
-                <div className="px-24">
+                <div className="sm:w-1/2 sm:px-24 mt-3">
                   <h1 className="text-2xl">Intregretion</h1>
                   {integrations &&
                     integrations.map((integration) => (
@@ -32,11 +32,10 @@ const Modal = (props) => {
               <div className="card-actions justify-end"></div>
             </div>
             <div>
-              <figure className="w-full ">
+              <figure className="w-100">
                 <img src={image_link && image_link[0]} />
               </figure>
-
-              <h1 className="mt-16">{accuracy && accuracy.description}</h1>
+              <h1 className="mt-3">{accuracy && accuracy.description}</h1>
             </div>
           </div>
           <div className="modal-action">
